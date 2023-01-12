@@ -10,7 +10,7 @@
    <p>
        關鍵字 : 
        @Html.TextBox("txtKeyword")
-       <input type="submit" value="搜尋" />
+       <input type="submit" value="搜尋"  />
    </p>
 
 }
@@ -18,13 +18,13 @@
 
 <div>
     <p>
-        <a href="~/Customer/Create">新增客戶</a>
+        <a href="~/Customer/Create" class="btn btn-primary">新增客戶</a>
     </p>
 </div>
 
 
 
-<table border="1">
+<table class="table table-striped table-hover">
     <tr>
         <td>序</td>
         <td>姓名</td>
@@ -48,9 +48,9 @@
                 <td>@t.fAddress</td>
                 <td>@t.fPassword</td>
                 @*<td><a href="~/Customer/Delete/?id=@t.fId">刪除</a></td>*@
-                <td>@Html.ActionLink("修改", "Edit", "Customer", new { id = t.fId }, null)</td>
+                <td>@Html.ActionLink("修改", "Edit", "Customer", new { id = t.fId }, new {@class="btn btn-success"})</td>
 
-                <td>@Html.ActionLink("刪除", "Delete", "Customer", new { id = t.fId }, new { onclick = "return confirm('確定要刪除嗎?')" })</td>
+                <td>@Html.ActionLink("刪除", "Delete", "Customer", new { id = t.fId }, new { onclick = "return confirm('確定要刪除嗎?')", Class ="btn btn-danger" })</td>
             </tr>
         }
     }
