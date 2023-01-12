@@ -1,0 +1,59 @@
+﻿@using WebMVC010401.Models
+@model List<CClass1>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>客戶資料一覽表</h2>
+@using (Html.BeginForm())
+{
+   <p>
+       關鍵字 : 
+       @Html.TextBox("txtKeyword")
+       <input type="submit" value="搜尋" />
+   </p>
+
+}
+
+
+<div>
+    <p>
+        <a href="~/Customer/Create">新增客戶</a>
+    </p>
+</div>
+
+
+
+<table border="1">
+    <tr>
+        <td>序</td>
+        <td>姓名</td>
+        <td>電話</td>
+        <td>電子郵件</td>
+        <td>地址</td>
+        <td>密碼</td>
+        <td>編輯</td>
+        <td>刪除</td>
+    </tr>
+    @{
+        int count = 0;
+        foreach (CClass1 t in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@t.fName</td>
+                <td>@t.fPhone</td>
+                <td>@t.fEmail</td>
+                <td>@t.fAddress</td>
+                <td>@t.fPassword</td>
+                @*<td><a href="~/Customer/Delete/?id=@t.fId">刪除</a></td>*@
+                <td>@Html.ActionLink("修改", "Edit", "Customer", new { id = t.fId }, null)</td>
+
+                <td>@Html.ActionLink("刪除", "Delete", "Customer", new { id = t.fId }, new { onclick = "return confirm('確定要刪除嗎?')" })</td>
+            </tr>
+        }
+    }
+
+</table>
+

@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "showById";
+    string photo = "0.jpg";
+    if (ViewBag.kk != null)
+    {
+        photo = @ViewBag.kk.fId+".jpg";
+    }
+}
+
+<h2>顯示客戶資料查詢作業</h2>
+<img src="~/Controllers/images/@photo" width="250" height="180" />
+@{
+    if (ViewBag.kk != null)
+    {
+        <h1> @ViewBag.kk.fName</h1>
+        <br />
+        @ViewBag.kk.fPhone
+        <br />
+        @ViewBag.kk.fEmail
+    }
+    else
+    {
+        @:"查無此人"
+    }
+}
+@*碰到@看成C#  碰到@:看成HTML*@
+
+

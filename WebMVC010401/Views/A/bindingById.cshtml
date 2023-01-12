@@ -1,0 +1,27 @@
+﻿@model WebMVC010401.Models.CClass1
+@{
+    ViewBag.Title = "showById";
+    string photo = "0.jpg";
+    if (Model != null)
+    {
+        photo = Model.fId + ".jpg";
+    }
+}
+
+<h2>繫結物件範例</h2>
+<img src="~/Controllers/images/@photo" width="250" height="180" />
+@{
+    if (Model != null)
+    {
+        <h1> @Model.fName</h1>
+        <br />
+        @Model.fPhone
+        <br />
+        @Model.fEmail
+    }
+    else
+    {
+        @:"查無此人"
+    }
+}
+@*碰到@看成C#  碰到@:看成HTML*@

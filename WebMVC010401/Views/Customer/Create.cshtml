@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>新增客戶作業</h2>
+
+<form method="post" action="~/Customer/Save">
+    <div>
+        姓名<br />
+        <input type="text" name="txtName" />
+    </div>
+    <div>
+        電話<br />
+        <input type="text" name="txtPhone" />
+    </div>
+    <div>
+        郵件<br />
+        <input type="text" name="txtEmail" />
+    </div>
+    <div>
+        地址<br />
+        <input type="text" name="txtAddress" />
+    </div>
+    <div>
+        密碼<br />
+        <input type="text" name="txtPassword" />
+    </div>
+    <div>
+       
+        <p><input type="submit" name="送出" /></p>
+    </div>
+
+
+</form>
+

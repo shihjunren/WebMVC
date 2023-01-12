@@ -1,0 +1,57 @@
+﻿@model  WebMVC010401.Models.CClass1
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>修改客戶作業</h2>
+
+<form method="post">
+    @*<input type="text" name="txtID" value="@Model.fId" />
+        <div>
+            姓名<br />
+            <input type="text" name="txtName" value="@Model.fName" />
+        </div>
+        <div>
+            電話<br />
+            <input type="text" name="txtPhone" value="@Model.fPhone" />
+        </div>
+        <div>
+            郵件<br />
+            <input type="text" name="txtEmail" value="@Model.fEmail" />
+        </div>
+        <div>
+            地址<br />
+            <input type="text" name="txtAddress" value="@Model.fAddress" />
+        </div>
+        <div>
+            密碼<br />
+            <input type="text" name="txtPassword" value="@Model.fPassword" />
+        </div>*@
+    <input type="hidden" name="fId" value="@Model.fId"  />
+    <div>
+        姓名<br />
+        <input type="text" name="fName" value="@Model.fName" />
+    </div>
+    <div>
+        電話<br />
+        <input type="text" name="fPhone" value="@Model.fPhone" />
+    </div>
+    <div>
+        郵件<br />
+        <input type="text" name="fEmail" value="@Model.fEmail" />
+    </div>
+    <div>
+        地址<br />
+        <input type="text" name="fAddress" value="@Model.fAddress" />
+    </div>
+    <div>
+        密碼<br />
+        <input type="text" name="fPassword" value="@Model.fPassword" />
+    </div>
+    <div>
+
+        <p><input type="submit" name="送出" /></p>
+    </div>
+
+
+</form>
